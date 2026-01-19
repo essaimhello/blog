@@ -45,5 +45,5 @@ jobs:
           git add -A
           git commit -m "Create by workflows"
           git branch -M main
-          git remote add origin https://${{ secret.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
+          git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
           git push origin HEAD:main -f
