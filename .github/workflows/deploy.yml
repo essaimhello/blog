@@ -44,6 +44,6 @@ jobs:
           git init
           git add -A
           git commit -m "Create by workflows"
-          git branch -M main
+          git branch -M gh_pages
           git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
-          git push origin HEAD:main -f
+          git push origin HEAD:gh_pages -f
