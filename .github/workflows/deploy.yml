@@ -3,33 +3,35 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - master  # 推送到master分支时触发
+      - master  # 当推送到 main 分支时触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # 使用最新版本的checkout
+        uses: actions/checkout@v2
         with:
-          submodules: false
+          submodules: false  # 禁用子模块检查
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
-          node-version: 'v22.16.0'  # 使用Hexo兼容的LTS版本
-          cache: 'npm'  # 缓存npm依赖，加速构建
+          node-version: 'v22.16.0'
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Install Hexo Deployer
-        run: npm install hexo-deployer-git --save
+      - name: Install Hexo Git Deployer
+        run: |
+          npm install hexo-deployer-git --save
+          npm install hexo-cli -g
 
       - name: Clean and Generate Static Files
         run: |
-          npx hexo clean
-          npx hexo generate
+          hexo clean
+          hexo generate
 
       - name: Configure Git
         run: |
@@ -37,6 +39,11 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy to GitHub Pages
-        run: npx hexo deploy --message "Deploy by GitHub Actions"
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET_HEXO }}  # 用GITHUB_TOKEN替代自定义密钥
+        run: |
+          cd public/
+          git init
+          git add -A
+          git commit -m "Create by workflows"
+          git branch -M gh_pages
+          git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
+          git push origin HEAD:gh_pages -f

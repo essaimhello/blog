@@ -1,0 +1,42 @@
+name: Deploy Hexo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # 推送到master分支时触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # 使用最新版本的checkout
+        with:
+          submodules: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.16.0'  # 使用Hexo兼容的LTS版本
+          cache: 'npm'  # 缓存npm依赖，加速构建
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Hexo Deployer
+        run: npm install hexo-deployer-git --save
+
+      - name: Clean and Generate Static Files
+        run: |
+          npx hexo clean
+          npx hexo generate
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Deploy to GitHub Pages
+        run: npx hexo deploy --message "Deploy by GitHub Actions"
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_HEXO }}  # 用GITHUB_TOKEN替代自定义密钥
