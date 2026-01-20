@@ -29,6 +29,7 @@ jobs:
         run: |
           node node_modules/hexo-cli/bin/hexo clean
           node node_modules/hexo-cli/bin/hexo generate
+          node node_modules/hexo/bin/hexo assets
 
       - name: Deploy to GitHub Pages
         run: |
