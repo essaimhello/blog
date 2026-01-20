@@ -53,4 +53,8 @@ jobs:
           ' >> _config.yml
 
       - name: Deploy to GitHub Pages
-        run: hexo deploy
+        run: |
+          # 关键修复：在当前临时仓库配置 Git 身份（本地配置，而非全局）
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          hexo deploy
