@@ -100,4 +100,7 @@ theme: next
 root: /blog/
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-
+deploy:
+  type: git
+  repo: git@github.com:essaimhello/blog.git  # 替换成你的仓库地址
+  branch: gh_pages  # 分支名（GitHub 新仓库默认是 main，老仓库可能是 master）
