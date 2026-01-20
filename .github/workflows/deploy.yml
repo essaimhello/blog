@@ -38,12 +38,16 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Deploy to GitHub Pages
+      - name: Configure Hexo Deploy
+        # 临时修改 _config.yml 的部署配置（避免本地配置暴露密钥）
         run: |
-          cd public/
-          git init
-          git add -A
-          git commit -m "Create by workflows"
-          git branch -M gh_pages
-          git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
-          git push origin HEAD:gh_pages -f
+          echo '
+          deploy:
+            type: git
+            repo: https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git
+            branch: gh-pages  # 推荐用 gh-pages 分支专门存放 Pages 静态文件
+            message: "Deploy from GitHub Actions: {{ now('YYYY-MM-DD HH:mm:ss') }}"
+          ' >> _config.yml
+
+      - name: Deploy to GitHub Pages
+        run: hexo deploy  # 执行 hexo d 完成部署

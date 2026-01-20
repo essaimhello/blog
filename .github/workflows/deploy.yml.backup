@@ -40,3 +40,15 @@ jobs:
         run: npx hexo deploy --message "Deploy by GitHub Actions"
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_HEXO }}  # 用GITHUB_TOKEN替代自定义密钥
+
+
+
+      - name: Deploy to GitHub Pages
+        run: |
+          cd public/
+          git init
+          git add -A
+          git commit -m "Create by workflows"
+          git branch -M gh_pages
+          git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
+          git push origin HEAD:gh_pages -f
