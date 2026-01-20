@@ -3,54 +3,40 @@ name: Deploy Hexo to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main  # 当推送到 main 分支时触发
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
         with:
-          submodules: false
-          fetch-depth: 0
+          submodules: false  # 禁用子模块检查
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: 'v22.16.0'
 
       - name: Install Dependencies
+        run: npm install
+
+      - name: Install Hexo Git Deployer
         run: |
-          npm install hexo-cli -g
-          npm install
           npm install hexo-deployer-git --save
+          npm install hexo-cli -g
 
       - name: Clean and Generate Static Files
         run: |
           hexo clean
           hexo generate
 
-      # 新增：清理异常的 .deploy_git 目录（核心修复步骤）
-      - name: Clean Hexo Deploy Directory
+      - name: Configure Git
         run: |
-          rm -rf .deploy_git  # 删除残留的 deploy 目录
-          git submodule deinit -f .  # 取消所有未初始化的子模块
-          rm -rf .gitmodules  # 删除可能残留的子模块配置文件
-
-      - name: Configure Hexo Deploy
-        run: |
-          echo '
-          deploy:
-            type: git
-            repo: https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git
-            branch: gh-pages
-            message: "Deploy from GitHub Actions: {{ now('YYYY-MM-DD_HH-mm-ss') }}"
-          ' >> _config.yml
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Deploy to GitHub Pages
         run: |
