@@ -39,5 +39,5 @@ jobs:
           git add -A
           git commit -m "Deploy Hexo by GitHub Actions"
           git branch -M gh-pages
-          git remote add origin https://github.com/essaimhello/blog.git
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/essaimhello/blog.git
           git push origin gh-pages -f
