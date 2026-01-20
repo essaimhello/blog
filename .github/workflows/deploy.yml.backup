@@ -52,3 +52,8 @@ jobs:
           git branch -M gh_pages
           git remote add origin https://${{ secrets.SECRET_HEXO }}@github.com/essaimhello/blog.git    # 保存静态网页文件的公开仓
           git push origin HEAD:gh_pages -f
+
+deploy:
+  type: git
+  repo: git@github.com:essaimhello/blog.git  # 替换成你的仓库地址
+  branch: gh_pages  # 分支名（GitHub 新仓库默认是 main，老仓库可能是 master）
