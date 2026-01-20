@@ -27,8 +27,8 @@ jobs:
 
       - name: Generate Hexo static files
         run: |
-          npx hexo clean
-          npx hexo generate
+          npx hexo-cli clean
+          npx hexo-cli generate
 
       - name: Deploy to GitHub Pages
         run: |
