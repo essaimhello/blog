@@ -31,7 +31,7 @@ jobs:
           # 安装Hexo扩展插件（字数统计、本地搜索、PDF嵌入）
           npm install hexo-word-counter --save
           npm install hexo-generator-searchdb --save
-          npm install theme-next-pdf --save
+          #npm install theme-next-pdf --save
 
       - name: Fix hexo permission
         run: chmod +x node_modules/.bin/hexo
