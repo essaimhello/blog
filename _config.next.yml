@@ -112,11 +112,11 @@ sidebar:
   padding: 18              # 内边距
   offset: 12               # 与顶部导航栏的偏移量
 
-# 侧边栏头像
-avatar:
-  url: /images/avatar.png   # 头像路径
-  rounded: true             # 圆形头像
-  rotated: false            # 优化：关闭头像旋转（避免视觉干扰）
+# # 侧边栏头像
+# avatar:
+#   url: /images/avatar.png   # 头像路径
+#   rounded: true             # 圆形头像
+#   rotated: false            # 优化：关闭头像旋转（避免视觉干扰）
 
 # 侧边栏显示站点统计（文章/分类/标签数量）
 site_state: true
@@ -124,7 +124,7 @@ site_state: true
 # 社交链接
 social:
   GitHub: https://github.com/essaimhello || fab fa-github # 替换为你的GitHub
-  E-Mail: mailto:your-email@example.com || fa fa-envelope  # 替换为你的邮箱
+  E-Mail: mailto:Judy@example.com || fa fa-envelope  # 替换为你的邮箱
   #Weibo: https://weibo.com/yourname || fab fa-weibo        # 微博
   #Twitter: https://twitter.com/yourname || fab fa-twitter  # 推特
 
