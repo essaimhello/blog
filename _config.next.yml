@@ -271,7 +271,7 @@ body_scrollbar:
 codeblock:
   theme:           # 代码高亮主题
     light: github  # 优化：浅色模式用github主题（更清晰）
-    dark: one-dark # 优化：深色模式用one-dark主题
+    dark: atom-one-dark # 优化：深色模式用atom-one-dark主题
   prism:
     light: prism
     dark: prism-dark
