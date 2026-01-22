@@ -58,7 +58,7 @@ favicon:
   apple_touch_icon: /images/apple-touch-icon.png # 苹果触摸图标
   safari_pinned_tab: /images/logo.svg   # Safari固定标签图标
   #android_manifest: /manifest.json     # Android应用清单
-
+  
 # 自定义Logo（Mist风格不支持）
 custom_logo: /images/logo.png  # 优化：添加自定义Logo，增强品牌感
 
