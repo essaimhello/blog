@@ -26,10 +26,10 @@ custom_file_path:
   #postBodyStart: source/_data/post-body-start.njk # 文章内容开头
   #postBodyEnd: source/_data/post-body-end.njk     # 文章内容结尾
   #footer: source/_data/footer.njk      # 自定义页脚
-  #bodyEnd: source/_data/body-end.njk   # 自定义body结尾
+  bodyEnd: source/_data/body-end.njk   # 自定义body结尾
   #variable: source/_data/variables.styl # 自定义样式变量
   #mixin: source/_data/mixins.styl      # 自定义样式混合
-  #style: source/_data/styles.styl      # 自定义样式
+  style: source/_data/styles.styl      # 自定义样式
 
 # ---------------------------------------------------------------
 # 主题风格配置（Scheme）
@@ -58,7 +58,7 @@ favicon:
   apple_touch_icon: /images/apple-touch-icon.png # 苹果触摸图标
   safari_pinned_tab: /images/logo.svg   # Safari固定标签图标
   #android_manifest: /manifest.json     # Android应用清单
-  
+
 # 自定义Logo（Mist风格不支持）
 custom_logo: /images/logo.png  # 优化：添加自定义Logo，增强品牌感
 
@@ -218,10 +218,11 @@ related_posts:
   enable: false
   icon: fa fa-signs-post
 
+
 # 文章编辑链接（跳转到GitHub编辑）
 post_edit:
   enable: true
-  url: https://github.com/essaimhello/blog/tree/master/source/_posts
+  url: https://github.com/essaimhello/blog/tree/master/source/
 
 # 文章上下篇导航
 post_navigation: left    # 显示在左侧（left/right/false）
@@ -276,7 +277,7 @@ codeblock:
     light: prism
     dark: prism-dark
   copy_button:     # 代码复制按钮
-    enable: true   # 优化：开启复制按钮
+    enable: false   # 优化：开启复制按钮
     style: flat    # 扁平样式（default/flat/mac）
   fold:            # 代码块折叠
     enable: true   # 优化：开启折叠
@@ -483,7 +484,7 @@ addtoany:
 # 百度统计（替换为你的ID）
 baidu_analytics: aabd9ab4e10e13348ad4f65d2c34e7b1
 
-# 不蒜子统计（极简访客统计）
+# 不算子统计（极简访客统计）
 busuanzi_count:
   enable: true      # 优化：开启不蒜子
   total_visitors: true # 总访客数

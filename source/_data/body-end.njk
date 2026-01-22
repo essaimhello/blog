@@ -1,0 +1,44 @@
+<script>
+// 等待页面加载完成
+document.addEventListener('DOMContentLoaded', function() {
+  // 找到所有代码块的语言标识元素
+  const langLabels = document.querySelectorAll('.highlight-wrap .code-lang');
+  langLabels.forEach(label => {
+    // 给语言标识添加“可点击”样式
+    label.style.cursor = 'pointer';
+    label.style.color = '#666';
+    label.style.padding = '2px 8px';
+    label.style.borderRadius = '4px';
+    label.style.transition = 'background 0.2s';
+
+    // 鼠标 hover 效果
+    label.addEventListener('mouseover', () => {
+      label.style.background = '#f0f0f0';
+      label.setAttribute('title', '点击复制代码');
+    });
+    label.addEventListener('mouseout', () => {
+      label.style.background = 'transparent';
+      label.removeAttribute('title');
+    });
+
+    // 点击语言标识时复制代码
+    label.addEventListener('click', () => {
+      // 找到当前代码块的代码内容
+      const codeBlock = label.closest('.highlight-wrap').querySelector('.code pre');
+      const codeContent = codeBlock.textContent;
+
+      // 复制到剪贴板
+      navigator.clipboard.writeText(codeContent).then(() => {
+        // 复制成功提示
+        const oldText = label.textContent;
+        label.textContent = '已复制';
+        label.style.color = '#28a745';
+        setTimeout(() => {
+          label.textContent = oldText;
+          label.style.color = '#666';
+        }, 1500);
+      });
+    });
+  });
+});
+</script>
