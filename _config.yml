@@ -1,106 +1,175 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+# Hexo 核心配置文件
+# 文档参考: https://hexo.io/docs/configuration.html
+# 源码地址: https://github.com/hexojs/hexo/
 
-# Site
+# ===================== 站点基本信息配置 =====================
+# Site - 站点核心信息配置区
+# 博客网站的标题（会显示在页面标题、导航栏等位置）
 title: 山楂树的博客
+# 博客副标题（部分主题会显示在标题下方）
 subtitle: '技术笔记'
+# 博客描述（用于SEO搜索引擎优化，会出现在页面meta标签中）
 description: '记录学习过程中的点点滴滴'
+# 博客关键词（用于SEO，多个关键词用空格分隔）
 keywords: 技术 博客 生活
+# 博客作者名称
 author: Judy
+# 博客使用的语言（zh-CN 表示简体中文，en 表示英文等）
 language: zh-CN
+# 博客使用的时区（Asia/Shanghai 对应中国上海时区，即东八区）
 timezone: 'Asia/Shanghai'
 
-# URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+# ===================== URL 路径配置 =====================
+# URL - 网站访问路径配置区
+## 配置你的网站访问地址。例如使用GitHub Pages时，格式为 'https://用户名.github.io/仓库名'
+# 网站的根URL（部署后的完整访问地址）
 url: https://essaimhello.github.io/blog/
+# 网站的根目录（如果部署在子目录下，如 /blog/，需要配置此项）
+root: /blog/
+# 文章永久链接的格式（:year 年/:month 月/:day 日/:title 标题）
 permalink: :year/:month/:day/:title/
+# 永久链接的默认值（留空即可）
 permalink_defaults:
+# 美化URL设置
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  # 是否移除永久链接末尾的 'index.html'（false保留，true移除）
+  trailing_index: false
+  # 是否移除永久链接末尾的 '.html'（true保留，false移除）
+  trailing_html: true
 
-# Directory
+# ===================== 目录结构配置 =====================
+# Directory - 网站目录结构配置区
+# 文章源文件存放目录（默认source，所有md文章、图片等资源都放这里）
 source_dir: source
+# 生成的静态文件输出目录（默认public，hexo generate后生成的网页文件都在这里）
 public_dir: public
+# 标签页存放目录（默认tags，生成的标签页面会放在这个目录下）
 tag_dir: tags
+# 归档页存放目录（默认archives，生成的归档页面会放在这个目录下）
 archive_dir: archives
+# 分类页存放目录（默认categories，生成的分类页面会放在这个目录下）
 category_dir: categories
+# 代码下载目录（极少使用，默认downloads/code）
 code_dir: downloads/code
+# 国际化目录（多语言配置时使用，默认:lang）
 i18n_dir: :lang
+# 跳过渲染的文件/目录（例如不想让Hexo处理的静态文件，格式如 'demo/**'）
 skip_render:
 
-# Writing
-new_post_name: :title.md # File name of new posts
+# ===================== 写作配置 =====================
+# Writing - 文章写作相关配置区
+# 新建文章的文件名格式（:title 表示用文章标题作为文件名）
+new_post_name: :title.md
+# 默认的文章布局（post表示文章，page表示页面，draft表示草稿）
 default_layout: post
-titlecase: false # Transform title into titlecase
+# 是否将文章标题自动转换为首字母大写格式（false不转换，true转换）
+titlecase: false
+# 外部链接配置
 external_link:
-  enable: true # Open external links in new tab
-  field: site # Apply to the whole site
+  # 是否在新标签页中打开外部链接（true是，false否）
+  enable: true
+  # 生效范围（site表示全站，post仅文章内，page仅页面）
+  field: site
+  # 排除的链接（不需要在新标签页打开的链接，留空则全部生效）
   exclude: ''
+# 文件名大小写转换（0不转换，1小写，2大写）
 filename_case: 0
+# 是否渲染草稿文章（false不渲染，true渲染，草稿默认在source/_drafts下）
 render_drafts: false
+# 是否为文章创建资源文件夹（true时，新建文章会生成同名文件夹存放图片等资源）
 post_asset_folder: false
+# 是否使用相对链接（false使用绝对链接，推荐false）
 relative_link: false
+# 是否显示未来发布的文章（true显示，false不显示）
 future: true
+# 代码语法高亮器（默认highlight.js，也可使用prismjs）
 syntax_highlighter: highlight.js
+# highlight.js 语法高亮配置
 highlight:
+  # 是否显示行号（true显示，false不显示）
   line_number: true
+  # 是否自动检测代码语言（false手动指定，true自动检测）
   auto_detect: false
+  # 替换tab键为指定字符（留空则不替换）
   tab_replace: ''
+  # 是否包裹代码块（true包裹，false不包裹）
   wrap: true
+  # 是否使用hljs的自动检测（false关闭，true开启）
   hljs: false
+# prismjs 语法高亮配置（如果使用prismjs需要开启）
 prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
 
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
+# ===================== 首页配置 =====================
+# Home page setting - 首页展示配置
+# path: 博客首页的根路径（默认空字符串）
+# per_page: 首页每页显示的文章数量（0表示禁用分页）
+# order_by: 文章排序方式（-date 按发布时间降序，date 升序）
 index_generator:
   path: ''
   per_page: 10
   order_by: -date
 
-# Category & Tag
+# ===================== 分类和标签配置 =====================
+# Category & Tag - 分类和标签配置
+# 默认分类（未指定分类的文章会归到这个分类下）
 default_category: uncategorized
+# 分类别名映射（例如 '前端': 'FrontEnd'，用于URL美化）
 category_map:
+# 标签别名映射（用法同分类映射）
 tag_map:
 
-# Metadata elements
-## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+# ===================== 元数据配置 =====================
+# Metadata elements - HTML元数据配置
+## 参考文档: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+# 是否显示Hexo生成器的meta标签（true显示，false隐藏）
 meta_generator: true
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
+# ===================== 日期时间格式 =====================
+# Date / Time format - 日期时间显示格式
+## Hexo 使用 Moment.js 解析和显示日期
+## 自定义格式参考: http://momentjs.com/docs/#/displaying/format/
+# 日期显示格式（YYYY-MM-DD 表示 年-月-日）
 date_format: YYYY-MM-DD
+# 时间显示格式（HH:mm:ss 表示 时:分:秒）
 time_format: HH:mm:ss
-## updated_option supports 'mtime', 'date', 'empty'
+## updated_option: 更新时间的取值方式（mtime文件修改时间，date文章发布时间，empty为空）
 updated_option: 'mtime'
 
-# Pagination
-## Set per_page to 0 to disable pagination
+# ===================== 分页配置 =====================
+# Pagination - 分页配置
+## 设置per_page为0禁用分页
+# 每页显示的文章数量（全局分页配置，优先级低于首页的per_page）
 per_page: 10
+# 分页目录名（例如page2、page3，默认page）
 pagination_dir: page
 
-# Include / Exclude file(s)
-## include:/exclude: options only apply to the 'source/' folder
+# ===================== 文件包含/排除配置 =====================
+# Include / Exclude file(s) - 文件包含/排除配置
+## include:/exclude: 仅对source/文件夹生效
+# 强制包含的文件/目录（即使在exclude中也会包含）
 include:
+# 排除的文件/目录（Hexo不会处理这些文件）
 exclude:
+# 忽略的文件/目录（比exclude优先级更高）
 ignore:
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
+# ===================== 扩展配置 =====================
+# Extensions - 扩展插件和主题配置
+## 插件参考: https://hexo.io/plugins/
+## 主题参考: https://hexo.io/themes/
+# 使用的主题名称（这里使用next主题，需确保已安装）
 theme: next
-root: /blog/
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
+
+# ===================== 部署配置 =====================
+# Deployment - 部署配置
+## 文档参考: https://hexo.io/docs/one-command-deployment
 deploy:
+  # 部署类型（git表示部署到git仓库）
   type: git
+  # git仓库地址（SSH方式，也可以用HTTPS方式：https://github.com/essaimhello/blog.git）
   repo: git@github.com:essaimhello/blog.git  # 替换成你的仓库地址
+  # 部署的分支（GitHub Pages通常用gh-pages分支，普通仓库也可用main/master）
   branch: gh-pages  # 分支名（GitHub 新仓库默认是 main，老仓库可能是 master）
