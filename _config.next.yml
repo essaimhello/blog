@@ -53,14 +53,14 @@ lightdark:
 
 # 网站图标（替换为自己的图标路径，建议放在source/images下）
 favicon:
-  small: /images/favicon-16x16.png      # 16x16小图标
-  medium: /images/favicon-32x32.png     # 32x32图标
-  apple_touch_icon: /images/apple-touch-icon.png # 苹果触摸图标
-  safari_pinned_tab: /images/logo.svg   # Safari固定标签图标
+  #small: /images/favicon-16x16.png      # 16x16小图标
+  #medium: /images/favicon-32x32.png     # 32x32图标
+  # apple_touch_icon: /images/apple-touch-icon.png # 苹果触摸图标
+  # safari_pinned_tab: /images/logo.svg   # Safari固定标签图标
   #android_manifest: /manifest.json     # Android应用清单
 
 # 自定义Logo（Mist风格不支持）
-custom_logo: /images/logo.png  # 优化：添加自定义Logo，增强品牌感
+#custom_logo: /images/logo.png  # 优化：添加自定义Logo，增强品牌感
 
 # 知识共享协议（CC 4.0）
 creative_commons:
@@ -277,7 +277,7 @@ codeblock:
     light: prism
     dark: prism-dark
   copy_button:     # 代码复制按钮
-    enable: false   # 优化：开启复制按钮
+    enable: true   # 优化：开启复制按钮
     style: flat    # 扁平样式（default/flat/mac）
   fold:            # 代码块折叠
     enable: true   # 优化：开启折叠
