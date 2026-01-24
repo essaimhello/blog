@@ -26,10 +26,10 @@ custom_file_path:
   #postBodyStart: source/_data/post-body-start.njk # 文章内容开头
   #postBodyEnd: source/_data/post-body-end.njk     # 文章内容结尾
   #footer: source/_data/footer.njk      # 自定义页脚
-  bodyEnd: source/_data/body-end.njk   # 自定义body结尾
+  #bodyEnd: source/_data/body-end.njk   # 自定义body结尾
   #variable: source/_data/variables.styl # 自定义样式变量
   #mixin: source/_data/mixins.styl      # 自定义样式混合
-  style: source/_data/styles.styl      # 自定义样式
+  #style: source/_data/styles.styl      # 自定义样式
 
 # ---------------------------------------------------------------
 # 主题风格配置（Scheme）
@@ -318,22 +318,22 @@ font:
   host: https://fonts.googleapis.com
   global:          # 全局字体
     external: true
-    family: "Noto Sans SC" # 优化：思源黑体（适配中文）
+    family: "\"Noto Sans SC\", \"Microsoft YaHei\", \"PingFang SC\", Arial, sans-serif" # 增加中英文字体回退
     size: 1.0em
   title:           # 标题字体
     external: true
-    family: "Noto Serif SC" # 优化：思源宋体（标题更醒目）
+    family: "\"Noto Serif SC\", \"Songti SC\", serif"
     size: 1.2em
   headings:        # 小标题字体
     external: true
-    family: "Noto Sans SC"
+    family: "\"Noto Sans SC\", \"Microsoft YaHei\", Arial, sans-serif"
     size: 1.1em
   posts:           # 文章内容字体
     external: true
-    family: "Noto Sans SC"
+    family: "\"Noto Sans SC\", \"Microsoft YaHei\", Arial, sans-serif"
   codes:           # 代码字体
     external: true
-    family: "Consolas, Monaco"
+    family: "Consolas, Monaco, \"Courier New\", monospace"
 
 # ---------------------------------------------------------------
 # SEO配置
@@ -482,7 +482,7 @@ addtoany:
 # ---------------------------------------------------------------
 
 # 百度统计（替换为你的ID）
-baidu_analytics: aabd9ab4e10e13348ad4f65d2c34e7b1
+baidu_analytics: "aabd9ab4e10e13348ad4f65d2c34e7b1"
 
 # 不算子统计（极简访客统计）
 busuanzi_count:
@@ -503,7 +503,7 @@ local_search:
   enable: true      # 优化：开启本地搜索
   top_n_per_article: 1
   unescape: true
-  preload: false
+  preload: true
 
 # ---------------------------------------------------------------
 # 聊天功能
