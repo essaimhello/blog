@@ -87,8 +87,8 @@ open_graph:
 menu:
   home: / || fa fa-home               # 首页
   about: /about/ || fa fa-user        # 关于页（需先创建about页面）
-  tags: /blog/tags/ || fa fa-tags          # 标签页（部署在子目录时使用 /blog/tags/）
-  categories: /blog/categories/ || fa fa-th # 分类页（部署在子目录时使用 /blog/categories/）
+  tags: tags/ || fa fa-tags          # 标签页
+  categories: categories/ || fa fa-th # 分类页
   archives: /archives/ || fa fa-archive # 归档页
   #schedule: /schedule/ || fa fa-calendar # 日程表（需插件）
   #sitemap: /sitemap.xml || fa fa-sitemap # 站点地图
