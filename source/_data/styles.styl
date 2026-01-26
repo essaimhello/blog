@@ -5,7 +5,7 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    font-size: 0.8em;
+    font-size: 0.75em;  // 优化：减小语言标签字体（从 0.8em 改为 0.75em）
     font-weight: 500;
     background: transparent;
     z-index: 10;
@@ -17,4 +17,19 @@
       background: #333;
     }
   }
+}
+
+// 代码块优化：隐藏水平滚动条并设置合理的内容溢出
+pre, code {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.highlight {
+  overflow-x: hidden;  // 优化：隐藏水平滚动条
+  word-break: break-all;
+  font-size: 0.95em;   // 优化：略微缩小代码字体以适应宽度
+  line-height: 1.5;
 }
