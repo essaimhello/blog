@@ -282,7 +282,9 @@ codeblock:
   fold:            # 代码块折叠
     enable: true   # 优化：开启折叠
     height: 400    # 超过400px折叠
-  language: true   # 开启：显示代码语言标签
+  language: false   # 禁用：隐藏代码语言标签（避免 BASH 异常大）
+  line_number: false  # 禁用行号显示以简化布局
+  copy_button_style: flat  # 简化复制按钮样式
 
 # 返回顶部按钮
 back2top:
