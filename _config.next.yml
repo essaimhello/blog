@@ -278,11 +278,11 @@ codeblock:
     dark: prism-dark
   copy_button:     # 代码复制按钮
     enable: true   # 优化：开启复制按钮
-    style: flat    # 扁平样式（default/flat/mac）
+    style: mac     # mac样式（default/flat/mac，mac风格复制和语言并排）
   fold:            # 代码块折叠
     enable: true   # 优化：开启折叠
     height: 400    # 超过400px折叠
-  language: false   # 优化：显示代码语言
+  language: true   # 开启：显示代码语言标签
 
 # 返回顶部按钮
 back2top:
