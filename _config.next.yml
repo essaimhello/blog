@@ -282,7 +282,7 @@ codeblock:
   fold:            # 代码块折叠
     enable: true   # 优化：开启折叠
     height: 400    # 超过400px折叠
-  language: true   # 优化：显示代码语言
+  language: false   # 优化：显示代码语言
 
 # 返回顶部按钮
 back2top:
@@ -292,7 +292,7 @@ back2top:
 
 # 阅读进度条
 reading_progress:
-  enable: true     # 优化：开启阅读进度条
+  enable: false     # 优化：开启阅读进度条
   start_at: left   # 左侧开始
   position: top    # 顶部显示
   reversed: false
