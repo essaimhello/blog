@@ -1,5 +1,5 @@
 ---
-title: hexo+next+githubaction部署个人博客
+title: linux实用的快捷键
 tags: []
 categories: Linux运维
 author: Judy
@@ -11,50 +11,43 @@ date: 2026-01-23 17:53:05
 # {{ title }}
 > 本文首发于我的个人博客，转载请注明出处。
 
-### <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">一、 4 个核心快捷键（终端文本编辑 / 控制）</font>
-| **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">快捷键</font>** | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">功能说明（Bash/Zsh 通用）</font>** |
+### 一、4 个核心快捷键（终端文本编辑 / 控制）
+| 快捷键 | 功能说明（Bash/Zsh 通用） |
 | --- | --- |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + A</font>` | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">光标跳转到行首</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（A = Beginning）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">echo "hello"</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 后按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+A</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">，光标会到 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">e</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 前面</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + E</font>` | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">光标跳转到行尾</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（E = End）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">echo "hello"</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 后按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+E</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">，光标会到 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">"</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 后面</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + D</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">1. </font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标所在位置的字符</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（类似 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Delete</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 键）；</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">2. 若光标在空行，按则 </font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">退出当前终端 / Session</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（等价于 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">exit</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + W</font>` | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标左侧到最近空格的单词</font>**<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">（W = Word）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">git push origin main</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> ，光标在 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">main</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 后，按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+W</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 会删除 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">main</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">；再按会删除 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">origin</font>` |
+| `Ctrl + A` | **光标跳转到行首**（A = Beginning）<br>例：输入 `echo "hello"` 后按 `Ctrl+A`，光标会到 `e` 前面 |
+| `Ctrl + E` | **光标跳转到行尾**（E = End）<br>例：输入 `echo "hello"` 后按 `Ctrl+E`，光标会到 `"` 后面 |
+| `Ctrl + D` | 1. **删除光标所在位置的字符**（类似 `Delete` 键）；<br>2. 若光标在空行，按则 **退出当前终端 / Session**（等价于 `exit`） |
+| `Ctrl + W` | **删除光标左侧到最近空格的单词**（W = Word）<br>例：输入 `git push origin main` ，光标在 `main` 后，按 `Ctrl+W` 会删除 `main`；再按会删除 `origin` |
 
-
-### <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">二、高频补充快捷键（按场景分类）</font>
-#### <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">1. 文本编辑类（修改命令行输入）</font>
-| **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">快捷键</font>** | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">功能说明</font>** |
+### 二、高频补充快捷键（按场景分类）
+#### 1. 文本编辑类（修改命令行输入）
+| 快捷键 | 功能说明 |
 | --- | --- |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + K</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标到行尾的所有字符（K = Kill）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + U</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标到行首的所有字符（U = Undo Line）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + Y</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">粘贴之前用 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+K/Ctrl+U/Ctrl+W</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 删除的内容（Y = Yank）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + H</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标左侧的字符（类似 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Backspace</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 键）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + T</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">交换光标所在字符和前一个字符（T = Swap）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">teh</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 后按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+T</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 变成 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">the</font>` |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Alt + D</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">删除光标右侧到最近空格的单词（Alt+D = Delete Word Right）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Alt + B</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">光标向左跳一个单词（B = Back Word）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Alt + F</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">光标向右跳一个单词（F = Forward Word）</font> |
+| `Ctrl + K` | 删除光标到行尾的所有字符（K = Kill） |
+| `Ctrl + U` | 删除光标到行首的所有字符（U = Undo Line） |
+| `Ctrl + Y` | 粘贴之前用 `Ctrl+K/Ctrl+U/Ctrl+W` 删除的内容（Y = Yank） |
+| `Ctrl + H` | 删除光标左侧的字符（类似 `Backspace` 键） |
+| `Ctrl + T` | 交换光标所在字符和前一个字符（T = Swap）<br>例：输入 `teh` 后按 `Ctrl+T` 变成 `the` |
+| `Alt + D` | 删除光标右侧到最近空格的单词（Alt+D = Delete Word Right） |
+| `Alt + B` | 光标向左跳一个单词（B = Back Word） |
+| `Alt + F` | 光标向右跳一个单词（F = Forward Word） |
 
-
-#### <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">2. 终端控制类（会话 / 进程管理）</font>
-| **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">快捷键</font>** | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">功能说明</font>** |
+#### 2. 终端控制类（会话 / 进程管理）
+| 快捷键 | 功能说明 |
 | --- | --- |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + C</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">强制终止当前运行的进程（最常用！）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">ping baidu.com</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 时按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+C</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 停止</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + Z</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">暂停当前进程，将其放入后台（Z = Suspend）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">后续可通过 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">fg</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 恢复到前台、</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">bg</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 让其在后台运行</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + L</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">清屏（等价于 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">clear</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 命令，L = Clear）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + S</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">暂停终端输出（防止日志刷屏，S = Stop）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + Q</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">恢复终端输出（解除 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+S</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 的暂停，Q = Quit Stop）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + R</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">搜索历史命令（R = Reverse Search）</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">按后输入关键词，会匹配之前执行过的命令，按 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl+R</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 切换下一个匹配项</font> |
+| `Ctrl + C` | 强制终止当前运行的进程（最常用！）<br>例：`ping baidu.com` 时按 `Ctrl+C` 停止 |
+| `Ctrl + Z` | 暂停当前进程，将其放入后台（Z = Suspend）<br>后续可通过 `fg` 恢复到前台、`bg` 让其在后台运行 |
+| `Ctrl + L` | 清屏（等价于 `clear` 命令，L = Clear） |
+| `Ctrl + S` | 暂停终端输出（防止日志刷屏，S = Stop） |
+| `Ctrl + Q` | 恢复终端输出（解除 `Ctrl+S` 的暂停，Q = Quit Stop） |
+| `Ctrl + R` | 搜索历史命令（R = Reverse Search）<br>按后输入关键词，会匹配之前执行过的命令，按 `Ctrl+R` 切换下一个匹配项 |
 
-
-#### <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">3. 历史命令类（快速复用之前的命令）</font>
-| **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">快捷键</font>** | **<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">功能说明</font>** |
+#### 3. 历史命令类（快速复用之前的命令）
+| 快捷键 | 功能说明 |
 | --- | --- |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">↑</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> / </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">↓</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">上下切换历史命令</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + P</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">上一条历史命令（等价于 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">↑</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">，P = Previous）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">Ctrl + N</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">下一条历史命令（等价于 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">↓</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">，N = Next）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">!!</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">执行上一条命令（终端输入 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">!!</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 回车即可）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">!n</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">执行第 n 条历史命令（</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">history</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 命令可查看序号）</font> |
-| `<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">!keyword</font>` | <font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">执行最近一条以 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">keyword</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 开头的命令</font><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">例：</font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">!git</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 会执行上一条 </font>`<font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);">git</font>`<br/><font style="color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0);"> 开头的命令</font> |
-
-
-
-
+| `↑` / `↓` | 上下切换历史命令 |
+| `Ctrl + P` | 上一条历史命令（等价于 `↑`，P = Previous） |
+| `Ctrl + N` | 下一条历史命令（等价于 `↓`，N = Next） |
+| `!!` | 执行上一条命令（终端输入 `!!` 回车即可） |
+| `!n` | 执行第 n 条历史命令（`history` 命令可查看序号） |
+| `!keyword` | 执行最近一条以 `keyword` 开头的命令<br>例：`!git` 会执行上一条 `git` 开头的命令 | 
