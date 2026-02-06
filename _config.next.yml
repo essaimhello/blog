@@ -303,7 +303,7 @@ reading_progress:
 
 # 书签功能
 bookmark:
-  enable: true     # 优化：开启书签
+  enable: false    # 禁用书签
   color: "#ff6b6b" # 书签颜色
   save: auto       # 自动保存阅读进度
 
