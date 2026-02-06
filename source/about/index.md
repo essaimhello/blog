@@ -17,7 +17,7 @@ layout: page
 
 ## 联系方式
 
-- GitHub: [essaimhello](https://github.com/essaimhello)
+- GitHub: [Judy](https://github.com/essaimhello)
 - 邮箱: Judy@example.com
 
 ---

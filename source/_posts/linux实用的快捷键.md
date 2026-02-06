@@ -5,11 +5,10 @@ categories: Linux运维
 author: Judy
 cover: /images/default-cover.jpg
 published: true
-date: 2026-01-23 17:53:05
+date: 2026-01-27 17:53:05
 ---
 
 # {{ title }}
-> 本文首发于我的个人博客，转载请注明出处。
 
 ### 一、4 个核心快捷键（终端文本编辑 / 控制）
 | 快捷键 | 功能说明（Bash/Zsh 通用） |
