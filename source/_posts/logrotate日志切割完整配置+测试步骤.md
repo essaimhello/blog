@@ -5,7 +5,7 @@ categories: logs
 author: Judy
 cover: /images/default-cover.jpg
 published: true
-date: 2026-02-06 12:03:05
+date: 2026-05-14 12:03:05
 ---
 
 # FreeSWITCH logrotate 日志切割完整配置+测试步骤
