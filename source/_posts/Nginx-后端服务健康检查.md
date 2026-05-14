@@ -1,11 +1,11 @@
 ---
-title: linux实用的快捷键
+title: Nginx-后端服务健康检查
 tags: [nginx]
 categories: nginx
 author: Judy
 cover: /images/default-cover.jpg
 published: true
-date: 2026-02-06 17:53:05
+date: 2026-02-06 12:03:05
 ---
 
 # Nginx-后端服务健康检查
